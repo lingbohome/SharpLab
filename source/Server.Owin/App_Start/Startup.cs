@@ -33,7 +33,7 @@ namespace SharpLab.Server.Owin {
             };
             app.UseCors(corsOptions);
 
-            var container = StartupHelper.CreateContainerBuilder().Build();
+            var container = CreateContainer();
             var mirrorSharpOptions = StartupHelper.CreateMirrorSharpOptions(container);
             app.UseMirrorSharp(mirrorSharpOptions);
 
@@ -50,6 +50,12 @@ namespace SharpLab.Server.Owin {
 
             app.Map("/github/auth/start", a => a.UseMiddlewareFromContainer<GitHubOAuthStartMiddleware>());
             app.Map("/github/auth/complete", a => a.UseMiddlewareFromContainer<GitHubOAuthCompleteMiddleware>());
+        }
+
+        private IContainer CreateContainer() {
+            var builder = new ContainerBuilder();
+            StartupHelper.ConfigureContainer(builder);
+            return builder.Build();
         }
 
         private class ShutdownMonitor : IRegisteredObject {

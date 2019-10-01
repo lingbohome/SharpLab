@@ -40,6 +40,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.NetCore", "Tests.NetC
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Native.Profiler", "Native.Profiler\Native.Profiler.vcxproj", "{91B6272F-5780-4C94-8071-DBBA7B4F67F3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Net Framework (Legacy)", ".Net Framework (Legacy)", "{F3965A77-0669-45E9-85DC-A9B7863E63C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
